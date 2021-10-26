@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -15,8 +16,12 @@ public class ShareLaneTest1Homework {
 
     @BeforeClass(alwaysRun = true)
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        // драйвер для открытия браузера
+        //System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         // open browser
+        // Для того чтобы каждый раз не обновлять браузер вручную, он обновляет драйвер в соотвтетствии с версией браузера
+        WebDriverManager.chromedriver().setup();
+
         driver = new ChromeDriver();
         // открытие окна на всеь размер
         driver.manage().window().maximize();
@@ -336,9 +341,17 @@ public class ShareLaneTest1Homework {
         boolean successful = driver.findElement(By.cssSelector("a[href='./main.py']")).isDisplayed();
         Assert.assertTrue(successful, "Bad");
     }
-    /** RESULT
-     Passed - 8
-     Failed - 4 (3 + 1(Test_11 should be fail))
-     Bugs - 2
+
+    /**
+     * RESULT
+     * Passed - 8
+     * Failed - 4 (3 + 1(Test_11 should be fail))
+     * Bugs - 2
      */
+    @Test
+    public void eDog() {
+        driver.get("https://sharelane.com/");
+        driver.findElement(By.cssSelector("img[src='./images/logo.jpg']"));  // <img src="./images/logo.jpg" border="0">
+
+    }
 }
