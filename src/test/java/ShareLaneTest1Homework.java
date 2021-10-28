@@ -34,7 +34,7 @@ public class ShareLaneTest1Homework {
     // ZIP code
     // Test_1 (Passed)
     @Test
-    public void spaceTextZipCodeTest() {
+    public void spaceTextSpecialCharactersZipCode() {
         driver.get("https://sharelane.com/");
         WebElement enterButton = driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")); // <a href="../cgi-bin/main.py"><b>ENTER</b></a>
         enterButton.click();
@@ -46,12 +46,12 @@ public class ShareLaneTest1Homework {
         WebElement continueButton = driver.findElement(By.cssSelector("input[value='Continue']"));   // <input type="submit" value="Continue">
         continueButton.click();
         WebElement errorMessage = driver.findElement(By.className("error_message"));                 // <span class="error_message">Oops, error on page. ZIP code should have 5 digits</span>
-        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. ZIP code should have 5 digits", "Error");
+        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. ZIP code should have 5 digits", "ERROR: User can input incorrect data(space bar, text characters and special characters) in the Zip code field");
     }
 
     // Test_2 (Passed)
     @Test
-    public void maxValueZipCodeTest() {
+    public void maxValueZipCode() {
         driver.get("https://sharelane.com/");
         WebElement enterButton = driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")); // <a href="../cgi-bin/main.py"><b>ENTER</b></a>
         enterButton.click();
@@ -80,12 +80,12 @@ public class ShareLaneTest1Homework {
         WebElement continueButton = driver.findElement(By.cssSelector("input[value='Continue']"));   // <input type="submit" value="Continue">
         continueButton.click();
         WebElement errorMessage = driver.findElement(By.className("error_message"));                 // <span class="error_message">Oops, error on page. ZIP code should have 5 digits</span>
-        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. ZIP code should have 5 digits", "Error");
+        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. ZIP code should have 5 digits", "Error: the ZIP code field should have five or more digits");
     }
 
     // Test_4 (Failed)
     @Test
-    public void negativeFractionalDigits() {
+    public void negativeFractionalDigitsZipCode() {
         driver.get("https://sharelane.com/");
         WebElement enterButton = driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")); // <a href="../cgi-bin/main.py"><b>ENTER</b></a>
         enterButton.click();
@@ -103,14 +103,14 @@ public class ShareLaneTest1Homework {
         WebElement continueButton_2 = driver.findElement(By.cssSelector("input[value='Continue']")); // <input type="submit" value="Continue">
         continueButton_2.click();
         WebElement errorMessage_2 = driver.findElement(By.className("error_message"));               // <span class="error_message">Oops, error on page. ZIP code should have 5 digits</span>
-        Assert.assertEquals(errorMessage_2.getText(), "Oops, error on page. ZIP code should have 5 digits", "Error");
+        Assert.assertEquals(errorMessage_2.getText(), "Oops, error on page. ZIP code should have 5 digits", "Error: the ZIP code field should have five or more integer positive digits");
     }
 
     // Sign Up
     // Test_5 (Passed)
     // Вариант_записи_1
     @Test
-    public void successfulRegistration1() {
+    public void validDataZipCodeSignup() {
         driver.get("https://sharelane.com/");
         WebElement enterButton = driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")); // <a href="../cgi-bin/main.py"><b>ENTER</b></a>
         enterButton.click();
@@ -135,13 +135,13 @@ public class ShareLaneTest1Homework {
         WebElement registerButton2 = driver.findElement(By.cssSelector("input[value='Register']"));   // <input type="submit" value="Register">
         registerButton2.click();
         boolean successful = driver.findElement(By.cssSelector("a[href='./main.py']")).isDisplayed(); // <a href="./main.py">here</a>
-        Assert.assertTrue(successful, "Bad");
+        Assert.assertTrue(successful, "ERROR: Data isn`t correct");
     }
 
     // Test_5 (Passed)
     // Вариант_записи_2
     @Test
-    public void successfulRegistration2() {
+    public void validDataZipCodeSignUp() {
         driver.get("https://sharelane.com/");
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
         driver.findElement(By.cssSelector("a[href='./register.py']")).click();
@@ -155,13 +155,13 @@ public class ShareLaneTest1Homework {
         driver.findElement(By.name("password2")).sendKeys("122333444455555");
         driver.findElement(By.cssSelector("input[value='Register']")).click();
         boolean successful = driver.findElement(By.cssSelector("a[href='./main.py']")).isDisplayed();
-        Assert.assertTrue(successful, "Bad");
+        Assert.assertTrue(successful, "ERROR: Data isn`t correct");
     }
 
     // Test_6 (Passed)
     // Вариант_записи_1
     @Test
-    public void emptyFieldSignUp1() {
+    public void emptyFieldsSignup() {
         driver.get("https://sharelane.com/");
         WebElement enterButton = driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")); // <a href="../cgi-bin/main.py"><b>ENTER</b></a>
         enterButton.click();
@@ -185,13 +185,13 @@ public class ShareLaneTest1Homework {
         WebElement registerButton2 = driver.findElement(By.cssSelector("input[value='Register']"));  // <input type="submit" value="Register">
         registerButton2.click();
         WebElement errorMessage = driver.findElement(By.className("error_message"));
-        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "Error");
+        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "Error: All fields should have data");
     }
 
     // Test_6 (Passed)
     // Вариант_записи_2
     @Test
-    public void emptyFieldSignUp2() {
+    public void emptyFieldsSignUp() {
         driver.get("https://sharelane.com/");
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
         driver.findElement(By.cssSelector("a[href='./register.py']")).click();
@@ -205,14 +205,14 @@ public class ShareLaneTest1Homework {
         driver.findElement(By.name("password2")).sendKeys("");
         driver.findElement(By.cssSelector("input[value='Register']")).click();
         boolean successful = driver.findElement(By.cssSelector("a[href='./main.py']")).isDisplayed();
-        Assert.assertTrue(successful, "Bad");
+        Assert.assertTrue(successful, "Error: All fields should have data");
     }
 
     // Дополнительно
     // Test_7 (Passed)
     // The "Email" field has not the symbol "@"
     @Test
-    public void emailHasNotSymbolDog() {
+    public void emailHasNotSymbolATSignUp() {
         driver.get("https://sharelane.com/");
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
         driver.findElement(By.cssSelector("a[href='./register.py']")).click();
@@ -226,14 +226,14 @@ public class ShareLaneTest1Homework {
         driver.findElement(By.name("password2")).sendKeys("122333444455555");
         driver.findElement(By.cssSelector("input[value='Register']")).click();
         WebElement errorMessage = driver.findElement(By.className("error_message"));
-        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "Error");
+        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "ERROR: The Email field should has symbol AT");
     }
 
     // Дополнительно
     // Test_8 (Failed) BUG
-    // The "Password" field and the "ConfirmPassword" field are coincidence
+    // The "Password" field and the "ConfirmPassword" field are coincidence.
     @Test
-    public void passwordConfirmPasswordCoincidence() {
+    public void passwordConfirmPasswordCoincidenceSignUp() {
         driver.get("https://sharelane.com/");
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
         driver.findElement(By.cssSelector("a[href='./register.py']")).click();
@@ -247,13 +247,13 @@ public class ShareLaneTest1Homework {
         driver.findElement(By.name("password2")).sendKeys("67890");
         driver.findElement(By.cssSelector("input[value='Register']")).click();
         WebElement errorMessage = driver.findElement(By.className("error_message"));
-        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "Error");
+        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "ERROR: the Password field and the Confirm Password field should coincidence");
     }
 
     // Test_9 (Failed) BUG
     // The "First Name" field and the "Last Name" field should not coincidence
     @Test
-    public void nameLastNameNotCoincidence() {
+    public void nameLastNameNotCoincidenceSignUp() {
         driver.get("https://sharelane.com/");
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
         driver.findElement(By.cssSelector("a[href='./register.py']")).click();
@@ -267,38 +267,38 @@ public class ShareLaneTest1Homework {
         driver.findElement(By.name("password2")).sendKeys("12345");
         driver.findElement(By.cssSelector("input[value='Register']")).click();
         WebElement errorMessage = driver.findElement(By.className("error_message"));
-        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "Error");
+        Assert.assertEquals(errorMessage.getText(), "Oops, error on page. Some of your fields have invalid data or email was previously used", "ERROR: the First Name field and the Last Name field should not coincidence");
     }
 
     // Test_10 (Passed)
     // Unknown user
     @Test
-    public void unregisteredUser() {
+    public void logOnAsAnUnregisteredUser() {
         driver.get("https://sharelane.com/");
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
         driver.findElement(By.name("email")).sendKeys("TestUser2021@gmail.com"); // <input type="text" name="email">
         driver.findElement(By.name("password")).sendKeys("1111");                // <input type="password" name="password">
         driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
         WebElement errorMessage = driver.findElement(By.className("error_message"));        // <span class="error_message">Oops, error. Email and/or password don't match our records</span>
-        Assert.assertEquals(errorMessage.getText(), "Oops, error. Email and/or password don't match our records", "Error");
+        Assert.assertEquals(errorMessage.getText(), "Oops, error. Email and/or password don't match our records", "ERROR: An unregistered user can come in");
     }
 
     // Test_11 (Failed)
     // Search book by name work (This test should be fail)
     @Test
-    public void searchBookByName() {
+    public void lookForTheBookByNameOnHomePage() {
         driver.get("https://sharelane.com/");
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
         driver.findElement(By.name("keyword")).sendKeys("Gitanjali");
         driver.findElement(By.name("keyword")).sendKeys(Keys.ENTER);
         boolean verification = driver.findElement(By.name("email")).isDisplayed();
-        Assert.assertTrue(verification, "Good job, that's the way");
+        Assert.assertTrue(verification, "ERROR: User can`t find the book by name");
     }
 
     // Test_12 (Passed)
     // Performance testing (1 seconds)
     @Test
-    public void performanceTesting() {
+    public void allFieldsAreDisplayedOnSignUpFormAfterOneSecond() {
         driver.get("https://sharelane.com/");
         driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
         driver.findElement(By.cssSelector("a[href='../cgi-bin/main.py']")).click();
@@ -334,7 +334,7 @@ public class ShareLaneTest1Homework {
         driver.findElement(By.name("password2")).sendKeys("122333444455555");
         driver.findElement(By.cssSelector("input[value='Register']")).click();
         boolean successful = driver.findElement(By.cssSelector("a[href='./main.py']")).isDisplayed();
-        Assert.assertTrue(successful, "Bad");
+        Assert.assertTrue(successful, "ERROR: Web element(-s) is loaded slowly");
     }
     /** RESULT
      Passed - 8
