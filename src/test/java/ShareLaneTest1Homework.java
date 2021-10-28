@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -369,10 +370,10 @@ public class ShareLaneTest1Homework {
      Failed - 3 (2 + 1(Test_11 should be fail))
      Bugs - 2
      */
-    @Test
-    public void eDog() {
-        driver.get("https://sharelane.com/");
-        driver.findElement(By.cssSelector("img[src='./images/logo.jpg']"));  // <img src="./images/logo.jpg" border="0">
-
-    }
+//    @Test
+//    public void eDog() {
+//        driver.get("https://sharelane.com/");
+//        driver.findElement(By.cssSelector("img[src='./images/logo.jpg']"));  // <img src="./images/logo.jpg" border="0">
+//
+//    }
 }
