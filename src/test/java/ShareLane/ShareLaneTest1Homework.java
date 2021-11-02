@@ -1,3 +1,5 @@
+package ShareLane;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -636,6 +638,7 @@ public class ShareLaneTest1Homework {
                 "User can`t follow the Python Source File");
     }
 
+    /**
     // [Links] Test_23 ВОПРОС как проверить эту ссылку?
     // Check link Contact   Link №4 - Contact
     @Test
@@ -661,6 +664,7 @@ public class ShareLaneTest1Homework {
         // Boolean site = driver.findElement(By.cssSelector("html > body > pre > span:nth-child(2)")).isDisplayed();
         // Assert.assertTrue(site, "User can`t follow the Mail");
     }
+    */
 
     // [Logo] Test_24 (Passed)
     // User (registered user) chose and opened left book then click Logo (Book page to Home page)
