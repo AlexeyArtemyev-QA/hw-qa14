@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework (HTML)</title>
+</head>
+<body>
+<html>
+
+<style>
+marquee{
+   border:3px solid black;
+   color:#000000;
+}
+table {
+  border:3px solid black;
+}
+th {
+  border:2px solid black;
+  background-color:#F08080;
+}
+td {
+  border:1px solid black;
+  background-color:#DCDCDC;
+}
+</style>
+
+<body style="background-image:url(https://www.anypics.ru/large/201210/8214.jpg)">
+<hr align="center" width=100% size="5" color="#708090">
+<h1 align="center">TeachMeSkills</h1>
+<hr align="center" width=100% size="5" color="#708090">
+
+<title>Бегущая строка текста в HTML</title>
+</head>
+<body>
+<marquee behavior="scroll" direction="right"><strong> QA 14 </strong></marquee>
+
+<hr>
+</body>
+
+<body>
+<table style="width:100%">
+    <tr>
+        <th>id</th>
+        <th>First Name</th>
+        <th>Position</th>
+        <th>Department</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td align="center">1</td>
+        <td>Катя</td>
+        <td align="center">Quality Assurance Engineer</td>
+        <td align="center">Testing</td>
+        <td>Norway</td>
+    </tr>
+    <tr>
+        <td align="center">2</td>
+        <td>Анна</td>
+        <td align="center">Quality Assurance Engineer</td>
+        <td align="center">Testing</td>
+        <td>United Kingdom</td>
+    </tr>
+    <tr>
+        <td align="center">3</td>
+        <td>Natalie</td>
+        <td align="center">Quality Assurance Engineer</td>
+        <td align="center">Testing</td>
+        <td>Belgium</td>
+    </tr>
+    <tr>
+        <td align="center">4</td>
+        <td>Артем</td>
+        <td align="center">Quality Assurance Engineer</td>
+        <td align="center">Testing</td>
+        <td>Austria</td>
+    </tr>
+    <tr>
+        <td align="center">5</td>
+        <td>Виктория</td>
+        <td align="center">Quality Assurance Engineer</td>
+        <td align="center">Testing</td>
+        <td>France</td>
+    </tr>
+    <tr>
+        <td align="center">6</td>
+        <td>Olly</td>
+        <td align="center">Quality Assurance Engineer</td>
+        <td align="center">Testing</td>
+        <td>Italy</td>
+    </tr>
+    <tr>
+        <td align="center">7</td>
+        <td>Алексей</td>
+        <td align="center">Quality Assurance Engineer</td>
+        <td align="center">Testing</td>
+        <td>Switzerland</td>
+    </tr>
+</table>
+</body>
+
+<hr align="center" width=100% size="5" color="#708090">
+
+<body>
+<table style="width:100%">
+    <tr>
+        <td>
+            Group mentor <br>
+            First Name - Oleg<br>
+            Last Name - Voropaev<br>
+            Experience - 5+ years <br>
+            Position - Lead QA Engineer<br>
+            Сompany - ScienceSoft <br>
+            Country - Belarus <br>
+            City - Minsk <br>
+        </td>
+        <th style="background-image: url(https://i.pinimg.com/736x/3b/86/fc/3b86fc5954c00bba45b2ec9201c5c23f.jpg)">
+        </th>
+    </tr>
+</table>
+</body>
+
+<hr>
+
+<body>
+<table style="width:100%">
+    <tr>
+        <th align="center">Search</th>
+        <th>Feedback</th>
+    </tr>
+    <tr>
+        <td> <form action="/action_page.php">
+            <label for="fname">First Name*:</label><br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Last name*:  </label> <br>
+            <input type="text" id="fname" name="fname"><br>
+            <label for="lname">Position:</label> <br>
+            <select name="Position" id="Position">
+                <option value=""></option>
+                <option value="Manager">Manager </option>
+                <option value="Designer">Designer</option>
+                <option value="Developer">Developer</option>
+                <option value="Quality Assurance Engineer">QA Engineer</option>
+                <option value="Business analyst">Business analyst</option>
+            </select>
+            <br>
+            <label for="lname">Department:</label>
+            <br>
+            <select name="Department:" id="Department" >
+                <option value=""></option>
+                <option value="Business analysis">Business analysis</option>
+                <option value="Development">Development</option>
+                <option value="Design">Design</option>
+                <option value="Testing">Testing</option>
+                <option value="Support">Support</option>
+            </select>
+            <br>
+            <label for="lname">Country:</label><br>
+            <select name="Country:" id="Country">
+                <option value=""></option>
+                <option value="Norway">Norway</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Belgium">Belgium</option>
+                <option value="Austria">Austria</option>
+                <option value="France">France</option>
+                <option value="Italy">Italy</option>
+                <option value="Switzerland">Switzerland</option>
+            </select>
+            <p>
+                <input type="submit" value="Submit">
+                <button type="reset">Delete</button>
+        </form>
+        </td>
+        <td> <form action="http://ab-w.net/comments.php" method="post" name="commentform" id="commentform">
+            <input type="text" name="author" id="author" value="" size="30" />
+            <small> First Name </small>
+            <p><input type="text" name="author" id="author" value="" size="30" />
+                <small> Last Name </small>
+            </p>
+            <p><input type="text" name="email" id="email" value="" size="30" />
+                <small> Mail</small>
+            </p><textarea name="comment" id="comment" cols="70" rows="6"> </textarea>
+            <p><input name="submit" type="submit" id="submit" value="Submit" />
+                <button type="reset">Delete</button>
+                <button type="button" onclick="alert('The test is successful')">Test button!</button>
+        </form>
+        </td>
+    </tr>
+</table>
+</body>
+
+<hr>
+
+<body>
+<table style="width:100%">
+    <tr>
+        <td align="center"><a href="https://teachmeskills.by/">TeachMeSkills</a></td>
+        <td align="center"><a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D1%89%D0%B8%D0%BA">About QA</a></td>
+        <td align="center"><a href="https://teachmeskills.by/kursy-programmirovaniya/qa-avtomatizirovannoe-testirovanie-minsk">AQA courses</a></td>
+    </tr>
+</table>
+</body>
+</html>
+
+</body>
+</html>
