@@ -65,3 +65,7 @@ public class Checkboxes {
         Assert.assertTrue(checkboxTwo, "ERROR: Checkbox 2 selected");
     }
 }
+
+
+// //*[@id="checkboxes"]/input[1]
+// //*[@id="checkboxes"]/input[2]
