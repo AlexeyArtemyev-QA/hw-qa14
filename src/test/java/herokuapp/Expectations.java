@@ -116,6 +116,7 @@ public class Expectations {
         driver.findElement(By.xpath("//a[@href='https://catalog.onliner.by/']//ancestor::span")).click();
         WebDriverWait wait9 = new WebDriverWait(driver, 10);
         wait9.until(ExpectedConditions.invisibilityOf(element));
+
     }
 
     // Test 8 FluentWait
@@ -131,5 +132,13 @@ public class Expectations {
 
     private void ignoring(Class<NoSuchElementException> noSuchElementExceptionClass) {
     }
+// ExpectedConditions.not(ExpectedConditions...)   // отрицыние того чего ищем
 
+    // driver.switchTo().frame(1) // переключение на фрейм с основного
+    // driver.switchTo().defaultContent   // переключение с фрейма на основной
+
+    // allert.accsept
+    //allert.dismiss
+
+    //File Uploader, см фото
 }
