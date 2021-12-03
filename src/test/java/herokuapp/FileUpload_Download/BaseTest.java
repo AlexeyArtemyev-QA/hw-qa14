@@ -41,4 +41,9 @@ public class BaseTest {
     public void tearDown() {
         driver.quit();
     }
+
+    // Конфигурация браузера блокирование попапа
+    // ChromeOptions options = new ChromeOptions();
+    //options.addArguments("--disable-popup-blocking");
+    //driver = new ChromeDriver(options);
 }
