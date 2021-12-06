@@ -9,17 +9,17 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        ITestListener.super.onTestStart(result);
+        System.out.println("Test started");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        ITestListener.super.onTestSuccess(result);
+        System.out.println(String.format("Test '%s' succeed", result.getName())); // напишет лог при успехе, прикручиваем аннотацией Listeners к КЛАССУ (после импортов) см класс BaseTest
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        ITestListener.super.onTestFailure(result);
+        System.out.println(String.format("Test '%s' failed", result.getName())); // напишет лог в лучае падения, прикручиваем аннотацией Listeners  к КЛАССУ (после импортов) BaseTest
     }
 
     @Override
