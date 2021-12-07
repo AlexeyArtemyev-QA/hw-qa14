@@ -1,5 +1,6 @@
-package PageObject.Test;
+package SauceDemoPageObject.Test;
 
+import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -48,6 +49,7 @@ public class LoginTest extends BaseTest {
 
 
 // Параметризованные тесты
+    @Step("login to Sausdemo.com with username {username} and password {password}")
     @Test (dataProvider = "Negative Login Test Data") // передача провайдера в тест
     public void loginNegativeTest (String username, String password, String expectedErrorMessage){
         loginPage.login(username, password);

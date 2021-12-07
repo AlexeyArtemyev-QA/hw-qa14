@@ -1,4 +1,4 @@
-package PageObject.Test;
+package SauceDemoPageObject.Test;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;

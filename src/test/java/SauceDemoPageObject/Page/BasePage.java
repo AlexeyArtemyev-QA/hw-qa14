@@ -1,4 +1,4 @@
-package PageObject.Page;
+package SauceDemoPageObject.Page;
 
 import org.openqa.selenium.WebDriver;
 
