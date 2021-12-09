@@ -4,6 +4,7 @@
     <test name="test 1">
         <classes>
             <class name="herokuapp.DropdownTest" />
+            <class name="SauceDemoPageObject.Test.LoginTest"/>
         </classes>
     </test> <!-- Test -->
 </suite>

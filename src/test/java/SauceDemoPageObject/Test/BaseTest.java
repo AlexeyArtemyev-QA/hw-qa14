@@ -22,14 +22,15 @@ public abstract class BaseTest {
     @BeforeClass(alwaysRun = true)
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        // ДОДЕЛАТЬ тест без UI
-        ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
-        options.addArguments("--headless");
 
+        // запуск браузера без UI(след 3 строчки) если хотим с UI то отсатвляем просто  driver = new ChromeDriver(options);
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+
+        driver.manage().window().maximize();  // открытие окна на весь экран
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver = new ChromeDriver(options);
         loginPage = new LoginPage(driver);
 
         driver.get("https://www.saucedemo.com/");

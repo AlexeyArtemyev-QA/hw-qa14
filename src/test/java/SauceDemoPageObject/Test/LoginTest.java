@@ -1,6 +1,7 @@
 package SauceDemoPageObject.Test;
 
-import io.qameta.allure.Step;
+import SauceDemoPageObject.utils.AllureUtils;
+import io.qameta.allure.*;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -42,6 +43,7 @@ public class LoginTest extends BaseTest {
     public void loginWithEmptyUsername2() {
         String expectedErrorMessage = "Epic sadface: Username is required";
         loginPage.login("", PASSWORD);
+        AllureUtils.attachScreenshot(driver); // возьмет скриншот и прикрепит его. В таком виде его можно вызывать в любом месте
         Assert.assertEquals(loginPage.getCurrentPageUrl(), LOGIN_PAGE_URL);
         Assert.assertTrue(loginPage.isErrorMessageDisplayed());
         Assert.assertEquals(loginPage.getErrorMessageText(), expectedErrorMessage);
@@ -69,7 +71,14 @@ public class LoginTest extends BaseTest {
 
 
 
-    @Test
+    @Test (description = "Description for Login test") // такой description мы увидим в Allure report если этого мало пишем аннотацию allure @Description
+    @Description ("Additional test description")// сюда можно написать шари из тест-кейса или большое описание
+    @Step // вешается на метод который используеться в тесте (подробнее см LoginTest
+    @Link("https://www.onliner.by/") // Вставка ссылки
+    @TmsLink("https://app.qase.io/project/SHARELANE?suite=2&case=30") // ВАРИАНТ ЗАПИСИ 1 если тест относится к какому-то теск кейсу или проверке (например QASE)
+    @TmsLink("project/SHARELANE?suite=2&case=30")// ВАРИАНТ ЗАПИСИ 2 (с использованием Allure.properties см Allure.properties) оставляем то что после Allure.properties
+    @Issue("I1") // ВАРИАНТ ЗАПИСИ 1 если тест относится к какомц-то известному дефекту то мы можем вставить ссылку на этот дефект в какой либо системе (например в JIRA)
+    @Issue("I2") // ВАРИАНТ ЗАПИСИ 2 (с использованием Allure.properties см Allure.properties) оставляем то что после Allure.properties
     public void loginWithEmptyPassword() {
         String expectedErrorMessage = "Epic sadface: Password is required";
         String currentPageUrl = loginPage.getCurrentPageUrl();
