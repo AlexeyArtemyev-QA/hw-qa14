@@ -29,7 +29,6 @@ public class ProductsPage extends BasePage {
 
     public String getProductDescription(String productName) {
         return null;
-
     }
 
     public int getProductsCount() {

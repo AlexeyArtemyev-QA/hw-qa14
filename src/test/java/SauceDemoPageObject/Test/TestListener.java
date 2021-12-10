@@ -21,8 +21,8 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        System.out.println(String.format("Test '%s' failed", result.getName())); // напишет лог в лучае падения, прикручиваем аннотацией Listeners  к КЛАССУ (после импортов) BaseTest
-        WebDriver driver = (WebDriver)(result.getAttribute("driver"));
+        System.out.println(String.format("Test '%s' failed", result.getName()));
+        WebDriver driver = (WebDriver)(result.getTestContext().getAttribute("driver"));
         AllureUtils.attachScreenshot(driver);
     }
 
