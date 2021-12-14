@@ -76,9 +76,9 @@ public class LoginTest extends BaseTest {
     @Step // вешается на метод который используеться в тесте (подробнее см LoginTest
     @Link("https://www.onliner.by/") // Вставка ссылки
     @TmsLink("https://app.qase.io/project/SHARELANE?suite=2&case=30") // ВАРИАНТ ЗАПИСИ 1 если тест относится к какому-то теск кейсу или проверке (например QASE)
-    @TmsLink("project/SHARELANE?suite=2&case=30")// ВАРИАНТ ЗАПИСИ 2 (с использованием Allure.properties см Allure.properties) оставляем то что после Allure.properties
+    @TmsLink("project/SHARELANE?suite=2&case=30")// ВАРИАНТ ЗАПИСИ 2 (с использованием allure.properties см allure.properties) оставляем то что после allure.properties
     @Issue("I1") // ВАРИАНТ ЗАПИСИ 1 если тест относится к какомц-то известному дефекту то мы можем вставить ссылку на этот дефект в какой либо системе (например в JIRA)
-    @Issue("I2") // ВАРИАНТ ЗАПИСИ 2 (с использованием Allure.properties см Allure.properties) оставляем то что после Allure.properties
+    @Issue("I2") // ВАРИАНТ ЗАПИСИ 2 (с использованием allure.properties см allure.properties) оставляем то что после allure.properties
     public void loginWithEmptyPassword() {
         String expectedErrorMessage = "Epic sadface: Password is required";
         String currentPageUrl = loginPage.getCurrentPageUrl();
