@@ -1,5 +1,6 @@
 package herokuapp;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +15,7 @@ public class Checkboxes {
 
     @BeforeMethod
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
@@ -65,3 +66,7 @@ public class Checkboxes {
         Assert.assertTrue(checkboxTwo, "ERROR: Checkbox 2 selected");
     }
 }
+
+
+// //*[@id="checkboxes"]/input[1]
+// //*[@id="checkboxes"]/input[2]

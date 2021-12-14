@@ -4,19 +4,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
-public class ABTesting {
-    private WebDriver driver;
+public class ContextMenu {
+    private WebDriver driver = new ChromeDriver();
 
     @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
@@ -28,11 +26,13 @@ public class ABTesting {
     }
 
     @Test
-    public void ABTesting() {
+    public void ContextMenu() {
         driver.get("https://the-internet.herokuapp.com/");
-        driver.findElement(By.xpath("//*[@id='content']/ul/li[1]/a")).click(); // //*[@id="content"]/ul/li[1]/a
-        String text = driver.getCurrentUrl();
-        Assert.assertEquals(text, "https://the-internet.herokuapp.com/abtest", "ERROR");  // https://the-internet.herokuapp.com/abtest
-        driver.findElement(By.xpath("//*[@id='page-footer']/div/div/a")).click();
+        driver.findElement(By.cssSelector("a[href='/context_menu']")).click(); // a[href="/context_menu"]
+        Actions actions1 = new Actions(driver);
+        actions1.contextClick(driver.findElement(By.id("hot-spot"))).perform(); // contextClick - клик правой кнопкой мыши
+        driver.switchTo().alert().accept();
+
+
     }
 }

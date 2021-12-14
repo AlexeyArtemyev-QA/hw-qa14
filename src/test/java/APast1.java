@@ -14,6 +14,7 @@ public class APast1 {
     @Test
     public void validZipCodeShouldBeAccepted() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+        // WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://www.sharelane.com/cgi-bin/register.py");
         driver.findElement(By.name("zip_code")).sendKeys("11111");

@@ -49,6 +49,14 @@ public class APast3 {
         assertTrue(select.getFirstSelectedOption().isSelected());
         assertFalse(options.get(0).isEnabled());
     }
-
+    // Пример, как переключаться между  вкладками браузера
+//    JavascriptExecutor js = (JavascriptExecutor) driver;
+//js.executeScript("window.open('https://www.google.com/', '_blank');");
+//    ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+//driver.switchTo().window(tabs2.get(1));
+//    WebElement googleSearchField = driver.findElement(By.name("q"));
+//googleSearchField.sendKeys("blablabla");
+//googleSearchField.sendKeys(Keys.ENTER);
+//driver.switchTo().window(tabs2.get(0));
 
 }
