@@ -21,19 +21,18 @@ public class LoginPage extends BasePage {
         driver.get(URL);
     }
 
-
     public String getErrorMessageText() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
     public boolean isErrorMessageDisplayed() {
+
         return driver.findElement(ERROR_MESSAGE).isDisplayed();
     }
 
     @Step("Login in Sausedemo.com with username {username} and password {password}") // в {} передаем входные аргументы метода login
     public void login(String username, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
-
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
         driver.findElement(LOGIN_BUTTON).click();
     }
